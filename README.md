@@ -13,15 +13,19 @@ Please visit  `LICENSE`  file to read the details about the license.
 **Language**
 - Java
 <br>
+
 **Toolkit**
 - Java Swing GUI
 <br>
+
 **IDE**
 - Netbeans 12 IDE
 <br>
+
 **Dependencies & Libraries**
 - MySQL Connector 5.1.18
 - JDK 17
+<br>
 
 ## Flowchart
 
