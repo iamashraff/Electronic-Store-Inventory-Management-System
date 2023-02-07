@@ -1,7 +1,7 @@
 
 # Electronic Store Inventory Management System (ESIMS)
 
-**ESIMS** is a simple inventory management system for **desktop application** written using **Java** and implementing **Java Swing GUI**. This project is the requirement of Software Design & Integration - ISB26504 course at the Universiti Kuala Lumpur (UniKL). The project requires for creativity and problem-solving skills in analyzing and designing a software project solution where need we need to apply **MVC** concept in the solution. 
+***ESIMS*** is a simple inventory management system for **desktop application** written using **Java** and implementing **Java Swing GUI**. This project is the requirement of Software Design & Integration - ISB26504 course at the Universiti Kuala Lumpur (UniKL). The project requires for creativity and problem-solving skills in analyzing and designing a software project solution where need we need to apply **MVC** concept in the solution. 
 
 Also, this project requires to implement at least two design patterns; in this case we are choosing **Singleton** and **Builder** design patterns. The implementation of these design pattern are only using a simplest way possible but also ensuring that the code are effective without needing to rewrite the same code all over again throughout each java file.
 
@@ -13,20 +13,16 @@ Please visit  `LICENSE`  file to read the details about the license.
 ## About the project
 **Language**
 - Java
-<br>
 
 **Toolkit**
 - Java Swing GUI
-<br>
 
 **IDE**
 - Netbeans 12 IDE
-<br>
 
 **Dependencies & Libraries**
 - MySQL Connector 5.1.18
 - JDK 17
-<br>
 
 ## 1. Module
 
@@ -65,10 +61,10 @@ Below is the summary of these two module:
 
 ## 4. Interface Description
 
-**4.1 The project uses MVC architecture (Model, View, Controller).**<br>
+**4.1 This project uses MVC architecture (Model, View, Controller).**<br>
 User Interface (UI) is a View. In the View, the user input data or value which the value will be going through Controller. The Controller should send the value to the model. However, if the value in Model is not valid, an error message will be generated. Otherwise, the Model will send an output to the Controller. Finally, Controller will display the result to View so that the user could view the results.  For both module 1 and module 2, we group each classes in packages named Model, View, and Controller so that we can identify their function.
 
-**4.2 The project uses CRUD function**<br>
+**4.2 This project uses CRUD function**<br>
 CRUD refer to four functions which are Create, Read, Update and Delete which are to implement a persistent storage known as storage. For this project we refer the storage as database. The type of database that we are using relational databases and the application is MySQL.  All the data of users and products will be stored in the database and reused to view in the application for data manipulation.
 
 ## 5. User Interface (UI)
@@ -121,3 +117,40 @@ CRUD refer to four functions which are Create, Read, Update and Delete which are
 5.2.4 Delete Product
 
 ![enter image description here](https://raw.githubusercontent.com/iamashraff/ElectronicStoreInventoryManagementSystemMVC/main/img/Delete_Product.png)
+
+## 6. Design Patterns
+
+6.1 Singleton<br>
+- The Singleton design pattern has been implemented in **Module 1: User Management.** <br>
+- It is to ensure that `User` class only has one instance. <br>
+- We only create object once and then we can reuse the same object throughout our application without having need to instantiate multiple times.<br>
+
+![enter image description here](https://raw.githubusercontent.com/iamashraff/Electronic-Store-Inventory-Management-System/main/img/Singleton1.jpg)
+
+![enter image description here](https://raw.githubusercontent.com/iamashraff/Electronic-Store-Inventory-Management-System/main/img/Singleton2.jpg)
+
+![enter image description here](https://raw.githubusercontent.com/iamashraff/Electronic-Store-Inventory-Management-System/main/img/Singleton3.jpg)
+
+6.2 Builder<br>
+- The Builder design pattern has been implemented in **Module 2: Product Management.** <br>
+
+![enter image description here](https://raw.githubusercontent.com/iamashraff/Electronic-Store-Inventory-Management-System/main/img/Builder1.jpg)
+
+- A computer may have many data field. To create an instance of computer class we have to use a constructor. However, sometimes we may not need to fill or passing all the information to the constructor. <br>
+- We could create multiple overloaded constructor. However, the problem will lead to unnecessary constructor in the code.<br>
+
+![enter image description here](https://raw.githubusercontent.com/iamashraff/Electronic-Store-Inventory-Management-System/main/img/Builder2.jpg)
+
+- Builder patterns allow us to extract object code of its own class and move to it to separate objects called builder.<br>
+- So, we add another class called `ComputerBuilder`.<br>
+
+![enter image description here](https://raw.githubusercontent.com/iamashraff/Electronic-Store-Inventory-Management-System/main/img/Builder3.jpg)
+
+![enter image description here](https://raw.githubusercontent.com/iamashraff/Electronic-Store-Inventory-Management-System/main/img/Builder4.jpg)
+
+
+## Credit
+
+**Developed by :**  
+_Muhamad Ashraff Othman_  
+© 2022 All rights reserved.
