@@ -1,0 +1,21 @@
+@startuml
+class User {
+~ int userID
+~ String firstName
+~ String lastName
+~ String username
+~ String isAdmin
+- {static} User instance
++ {static} User getInstance()
++ int getUserID()
++ void setUserID(int)
++ String getUsername()
++ void setUsername(String)
++ String getFirstName()
++ void setFirstName(String)
++ String getLastName()
++ void setLastName(String)
++ String getIsAdmin()
++ void setIsAdmin(String)
+}
+@enduml

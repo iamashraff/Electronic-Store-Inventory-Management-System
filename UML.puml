@@ -1,0 +1,368 @@
+@startuml
+class inventorymanagementsystem.InventoryManagementSystem {
++ {static} void main(String[])
+}
+class inventorymanagementsystem.UserManagement.View.UserManagement {
+- javax.swing.JButton btnAdd
+- javax.swing.JButton btnDelete
+- javax.swing.JButton btnEdit
+- javax.swing.JLabel jLabel1
+- javax.swing.JPanel jPanel1
+- javax.swing.JScrollPane jScrollPane1
+- javax.swing.JTable jTable1
++ void loadTable()
++ void reloadTable()
+- void initComponents()
+- void btnAddActionPerformed(java.awt.event.ActionEvent)
+- void btnDeleteActionPerformed(java.awt.event.ActionEvent)
+- void formWindowGainedFocus(java.awt.event.WindowEvent)
+- void btnEditActionPerformed(java.awt.event.ActionEvent)
++ {static} void main(String[])
+}
+class inventorymanagementsystem.ProductManagement.Model.ComputerBuilder {
+- String type
+- String processor
+- int ram
+- int storage
+- String brand
+- String model
+- int quantity
+- double price
+- {static} ComputerBuilder instance
++ {static} ComputerBuilder getInstance()
++ ComputerBuilder setType(String)
++ ComputerBuilder setProcessor(String)
++ ComputerBuilder setRam(int)
++ ComputerBuilder setStorage(int)
++ ComputerBuilder setBrand(String)
++ ComputerBuilder setModel(String)
++ ComputerBuilder setQuantity(int)
++ ComputerBuilder setPrice(double)
++ Computer build()
+}
+class inventorymanagementsystem.UserManagement.Model.UserManagementModel {
+~ String ID
+~ String firstname
+~ String lastname
+~ String isAdmin
+~ String username
+~ String password
+- {static} UserManagementModel instance
++ {static} UserManagementModel getInstance()
++ String getID()
++ void setID(String)
++ String getFirstname()
++ void setFirstname(String)
++ String getLastname()
++ void setLastname(String)
++ String getIsAdmin()
++ void setIsAdmin(String)
++ String getUsername()
++ void setUsername(String)
++ String getPassword()
++ void setPassword(String)
+}
+class inventorymanagementsystem.UserManagement.Controller.UserManagementController {
++ void AddUser(String,String,String,String,String)
++ void DeleteUser(String)
++ void EditUser(String)
+}
+class inventorymanagementsystem.UserManagement.Model.User {
+~ int userID
+~ String firstName
+~ String lastName
+~ String username
+~ String isAdmin
+- {static} User instance
++ {static} User getInstance()
++ int getUserID()
++ void setUserID(int)
++ String getUsername()
++ void setUsername(String)
++ String getFirstName()
++ void setFirstName(String)
++ String getLastName()
++ void setLastName(String)
++ String getIsAdmin()
++ void setIsAdmin(String)
+}
+class inventorymanagementsystem.ProductManagement.Model.Electronic {
++ String brand
++ String model
++ int quantity
++ double price
++ String getBrand()
++ void setBrand(String)
++ String getModel()
++ void setModel(String)
++ int getQuantity()
++ void setQuantity(int)
++ double getPrice()
++ void setPrice(double)
+}
+class inventorymanagementsystem.ProductManagement.Model.PhoneBuilder {
+- String type
+- String os
+- int ram
+- int storage
+- String brand
+- String model
+- int quantity
+- double price
+- {static} PhoneBuilder instance
++ {static} PhoneBuilder getInstance()
++ PhoneBuilder setType(String)
++ PhoneBuilder setOs(String)
++ PhoneBuilder setRam(int)
++ PhoneBuilder setStorage(int)
++ PhoneBuilder setBrand(String)
++ PhoneBuilder setModel(String)
++ PhoneBuilder setQuantity(int)
++ PhoneBuilder setPrice(double)
++ Phone build()
+}
+class inventorymanagementsystem.UserManagement.Model.DBConnection {
+~ String query
+~ String url
+~ String user
+~ String password
+- {static} DBConnection instance
++ {static} DBConnection getInstance()
++ String getQuery()
++ void setQuery(String)
++ String getUrl()
++ String getUser()
++ String getPassword()
+}
+class inventorymanagementsystem.UserManagement.View.UserAddFrame {
+- javax.swing.JButton btnAdd
+- javax.swing.JLabel jLabel1
+- javax.swing.JLabel jLabel2
+- javax.swing.JLabel jLabel3
+- javax.swing.JLabel jLabel4
+- javax.swing.JLabel jLabel5
+- javax.swing.JLabel jLabel6
+- javax.swing.JPanel jPanel1
+- javax.swing.JPanel jPanel2
+- javax.swing.JComboBox<String> jcbRoles
++ javax.swing.JTextField txtFirstName
++ javax.swing.JTextField txtLastName
++ javax.swing.JTextField txtPassword
++ javax.swing.JTextField txtUsername
+- void initComponents()
+- void btnAddActionPerformed(java.awt.event.ActionEvent)
++ {static} void main(String[])
+}
+class inventorymanagementsystem.ProductManagement.View.MainMenuFrame {
+~ DBConnection dbc
+~ User user
+- javax.swing.JButton btnAddProd
+- javax.swing.JButton btnDeleteProd
+- javax.swing.JButton btnEditProd
+- javax.swing.JButton btnMngUsers
+- javax.swing.JLabel jLabel5
+- javax.swing.JPanel jPanel2
+- javax.swing.JScrollPane jScrollPane1
+- javax.swing.JTable jTable1
+- javax.swing.JLabel lblLoginas
+- javax.swing.JLabel lblWelcome
+- void loadData()
++ void reloadTable()
+- void initComponents()
+- void btnAddProdActionPerformed(java.awt.event.ActionEvent)
+- void formWindowGainedFocus(java.awt.event.WindowEvent)
+- void btnEditProdActionPerformed(java.awt.event.ActionEvent)
+- void btnDeleteProdActionPerformed(java.awt.event.ActionEvent)
+- void btnMngUsersActionPerformed(java.awt.event.ActionEvent)
++ {static} void main(String[])
+}
+class inventorymanagementsystem.ProductManagement.Model.Computer {
++ String type
++ String processor
++ int ram
++ int storage
+}
+class inventorymanagementsystem.UserManagement.View.LoginFrame {
+- javax.swing.JButton btnLogin
+- javax.swing.JLabel jLabel1
+- javax.swing.JLabel jLabel2
+- javax.swing.JLabel jLabel3
+- javax.swing.JPanel jPanel1
+- javax.swing.JLabel lblTitle
+- javax.swing.JPasswordField txtPassword
+- javax.swing.JTextField txtUsername
+- void initComponents()
+- void btnLoginActionPerformed(java.awt.event.ActionEvent)
++ {static} void main(String[])
+}
+class inventorymanagementsystem.ProductManagement.View.EditProductFrame {
+~ DBConnection dbc
+~ String userId
+- javax.swing.JButton btnAdd
+- javax.swing.JLabel jLabel1
+- javax.swing.JLabel jLabel2
+- javax.swing.JLabel jLabel3
+- javax.swing.JLabel jLabel4
+- javax.swing.JLabel jLabel5
+- javax.swing.JLabel jLabel6
+- javax.swing.JLabel jLabel7
+- javax.swing.JLabel jLabel8
+- javax.swing.JLabel jLabel9
+- javax.swing.JPanel jPanel1
+- javax.swing.JPanel jPanel2
+- javax.swing.JComboBox<String> jcbType
+- javax.swing.JLabel lblProc
+- javax.swing.JTextField txtBrand
+- javax.swing.JTextField txtModel
+- javax.swing.JTextField txtPrice
+- javax.swing.JTextField txtProc
+- javax.swing.JTextField txtProdID
+- javax.swing.JTextField txtQuantity
+- javax.swing.JTextField txtRAM
+- javax.swing.JTextField txtStorage
++ void loadData(String)
+- void initComponents()
+- void jcbTypeItemStateChanged(java.awt.event.ItemEvent)
+- void btnAddActionPerformed(java.awt.event.ActionEvent)
++ void showHideproc()
++ {static} void main(String[])
+}
+class inventorymanagementsystem.ProductManagement.View.AddProductFrame {
+- javax.swing.JButton btnAdd
+- javax.swing.JLabel jLabel1
+- javax.swing.JLabel jLabel2
+- javax.swing.JLabel jLabel3
+- javax.swing.JLabel jLabel4
+- javax.swing.JLabel jLabel5
+- javax.swing.JLabel jLabel6
+- javax.swing.JLabel jLabel7
+- javax.swing.JLabel jLabel8
+- javax.swing.JPanel jPanel1
+- javax.swing.JPanel jPanel2
+- javax.swing.JComboBox<String> jcbType
+- javax.swing.JLabel lblProc
+- javax.swing.JTextField txtBrand
+- javax.swing.JTextField txtModel
+- javax.swing.JTextField txtPrice
+- javax.swing.JTextField txtProc
+- javax.swing.JTextField txtQuantity
+- javax.swing.JTextField txtRAM
+- javax.swing.JTextField txtStorage
++ void showHideproc()
+- void initComponents()
+- void btnAddActionPerformed(java.awt.event.ActionEvent)
+- void jcbTypeItemStateChanged(java.awt.event.ItemEvent)
+- void formWindowGainedFocus(java.awt.event.WindowEvent)
++ {static} void main(String[])
+}
+class inventorymanagementsystem.UserManagement.Controller.UserController {
++ void validateLogin(String,String)
+}
+class inventorymanagementsystem.ProductManagement.View.DeleteProductFrame {
+~ String userId
+- javax.swing.JButton btnCancel
+- javax.swing.JButton btnYes
+- javax.swing.JLabel jLabel1
+- javax.swing.JLabel jLabel10
+- javax.swing.JLabel jLabel2
+- javax.swing.JLabel jLabel3
+- javax.swing.JLabel jLabel4
+- javax.swing.JLabel jLabel5
+- javax.swing.JLabel jLabel6
+- javax.swing.JLabel jLabel7
+- javax.swing.JLabel jLabel9
+- javax.swing.JPanel jPanel2
+- javax.swing.JLabel jlabel
+- javax.swing.JLabel jlabelef
+- javax.swing.JLabel lblBrand
+- javax.swing.JLabel lblModel
+- javax.swing.JLabel lblPrice
+- javax.swing.JLabel lblProc
+- javax.swing.JLabel lblProdID
+- javax.swing.JLabel lblProdType
+- javax.swing.JLabel lblQuantity
+- javax.swing.JLabel lblRam
+- javax.swing.JLabel lblStorage
+- void initComponents()
+- void btnCancelActionPerformed(java.awt.event.ActionEvent)
+- void btnYesActionPerformed(java.awt.event.ActionEvent)
++ void loadData(String)
++ {static} void main(String[])
+}
+class inventorymanagementsystem.ProductManagement.Model.TestClass {
++ {static} void main(String[])
+}
+class inventorymanagementsystem.ProductManagement.Controller.ProductController {
++ void AddProduct(String,String,String,int,int,double,int,String)
++ void EditProduct(Computer,String)
++ void EditProduct(Phone,String)
++ void DeleteProduct(String)
+}
+class inventorymanagementsystem.Testing2 {
++ {static} void main(String[])
+}
+class inventorymanagementsystem.UserManagement.View.UserEditFrame {
+- javax.swing.JButton btnSave
+- javax.swing.JLabel jLabel1
+- javax.swing.JLabel jLabel2
+- javax.swing.JLabel jLabel3
+- javax.swing.JLabel jLabel4
+- javax.swing.JLabel jLabel5
+- javax.swing.JLabel jLabel6
+- javax.swing.JLabel jLabel7
+- javax.swing.JPanel jPanel1
+- javax.swing.JPanel jPanel2
+- javax.swing.JComboBox<String> jcbRoles
++ javax.swing.JTextField txtFirstName
++ javax.swing.JTextField txtLastName
++ javax.swing.JTextField txtPassword
++ javax.swing.JTextField txtUserID
++ javax.swing.JTextField txtUsername
++ void loadData()
+- void initComponents()
+- void btnSaveActionPerformed(java.awt.event.ActionEvent)
++ {static} void main(String[])
+}
+class inventorymanagementsystem.ProductManagement.Model.Phone {
++ String type
++ String os
++ int ram
++ int storage
+}
+class inventorymanagementsystem.UserManagement.View.UserDeleteFrame {
+~ UserManagementModel umd
+- javax.swing.JButton btnCancel
+- javax.swing.JButton btnYes
+- javax.swing.JLabel jLabel1
+- javax.swing.JLabel jLabel2
+- javax.swing.JLabel jLabel3
+- javax.swing.JLabel jLabel4
+- javax.swing.JLabel jLabel5
+- javax.swing.JLabel jLabel6
+- javax.swing.JLabel jLabel7
+- javax.swing.JPanel jPanel2
+- javax.swing.JLabel txtFname
+- javax.swing.JLabel txtLname
+- javax.swing.JLabel txtRole
+- javax.swing.JLabel txtUserID
+- javax.swing.JLabel txtUsername
++ void loadData()
+- void initComponents()
+- void btnCancelActionPerformed(java.awt.event.ActionEvent)
+- void btnYesActionPerformed(java.awt.event.ActionEvent)
++ {static} void main(String[])
+}
+
+
+inventorymanagementsystem.UserManagement.View.JFrame <|-- inventorymanagementsystem.UserManagement.View.UserManagement
+inventorymanagementsystem.UserManagement.View.JFrame <|-- inventorymanagementsystem.UserManagement.View.UserAddFrame
+inventorymanagementsystem.ProductManagement.View.JFrame <|-- inventorymanagementsystem.ProductManagement.View.MainMenuFrame
+inventorymanagementsystem.ProductManagement.Model.Electronic <|-- inventorymanagementsystem.ProductManagement.Model.Computer
+inventorymanagementsystem.UserManagement.View.JFrame <|-- inventorymanagementsystem.UserManagement.View.LoginFrame
+inventorymanagementsystem.ProductManagement.View.JFrame <|-- inventorymanagementsystem.ProductManagement.View.EditProductFrame
+inventorymanagementsystem.ProductManagement.View.JFrame <|-- inventorymanagementsystem.ProductManagement.View.AddProductFrame
+inventorymanagementsystem.ProductManagement.View.JFrame <|-- inventorymanagementsystem.ProductManagement.View.DeleteProductFrame
+inventorymanagementsystem.UserManagement.View.JFrame <|-- inventorymanagementsystem.UserManagement.View.UserEditFrame
+inventorymanagementsystem.ProductManagement.Model.Electronic <|-- inventorymanagementsystem.ProductManagement.Model.Phone
+inventorymanagementsystem.UserManagement.View.JFrame <|-- inventorymanagementsystem.UserManagement.View.UserDeleteFrame
+@enduml
