@@ -1,8 +1,0 @@
-@startuml
-class inventorymanagementsystem.ProductManagement.Controller.ProductController {
-+ void AddProduct(String,String,String,int,int,double,int,String)
-+ void EditProduct(Computer,String)
-+ void EditProduct(Phone,String)
-+ void DeleteProduct(String)
-}
-@enduml
